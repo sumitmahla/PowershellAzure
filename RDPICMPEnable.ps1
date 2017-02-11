@@ -1,6 +1,4 @@
-[DscLocalConfigurationManager()]
-Configuration RDPICMPEnable
-{
+
     Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
 
     Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
@@ -10,4 +8,3 @@ Configuration RDPICMPEnable
     netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol="icmpv4:8,any" dir=in action=allow
 
 
-}
